@@ -9,6 +9,7 @@ app.use('/',express.static('test-socket/dist/'))
 
 io.on('connection',socket=>{
     socket.on('chat message', msg=>{
+        console.log(`Message recieved: ${msg}`)
         io.emit('chat message', msg)
     })
 })
